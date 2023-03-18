@@ -6,6 +6,12 @@
 </head>
 <body>
   {% block content %}
+  {% if user.is_authenticated %}
+  <p>Hi {{ user.username }}</p>
+  {% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+  {% endif %}
    {% for post in posts %}
     <div>
       <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
