@@ -9,4 +9,4 @@ from django.contrib.auth.forms import UserCreationForm
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
-    template_name = 'accounts/signup.html'
+    template_name = 'signup.html'
